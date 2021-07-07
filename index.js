@@ -1,17 +1,16 @@
-const express = require('express');
-const app = express();
+const customExpress = require('./config/customExpress.js')
 
-app.get('/services', (req, res) =>
-res.send('You are at the guest services'));
-
-app.get('/', (req, res) =>
-res.send('beginning'));
-
-app.get('/appointment', (req, res) =>
-res.send('making appointmments'));
-
-
-
-
+const app = customExpress();
 
 app.listen(3000, () => console.log('rodando e cantando'));
+
+
+
+// const {getServices} = require('./controllers/services.js')
+// const {getMain} = require('./controllers/main.js')
+// const {getAppointment} = require('./controllers/appointment.js')
+
+// getServices(app);
+// getMain(app);
+// getAppointment(app);
+
